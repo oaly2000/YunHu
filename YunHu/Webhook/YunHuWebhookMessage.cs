@@ -1,20 +1,12 @@
 using System.Text.Json;
-using YunHu.Messages;
 
 namespace YunHu.Webhook;
 
-public class YunHuWebhookMessage
+public class YunHuWebhookMessage<T>
 {
     required public string Version { get; set; }
     required public YunHuWebhookMessageHeader Header { get; set; }
-    required public YunHuWebhookMessageEvent Event { get; set; }
-}
-
-public class YunHuWebhookMessageEvent
-{
-    required public YunHuWebhookMessageEventSender Sender { get; set; }
-    required public YunHuWebhookMessageEventChat Chat { get; set; }
-    required public YunHuWebhookMessageEventMessage Message { get; set; }
+    required public T Event { get; set; }
 }
 
 public class YunHuWebhookMessageEventMessage

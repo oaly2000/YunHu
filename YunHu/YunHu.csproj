@@ -10,14 +10,16 @@
     <IsPackable>true</IsPackable>
     <PackageId>YunHu</PackageId>
     <PackageProjectUrl>https://oaly2000.github.io/YunHu/</PackageProjectUrl>
-    <Version>1.0.0-beta</Version>
+    <Version>1.0.0-beta.2</Version>
     <PackageIcon>icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <EnablePackageValidation>true</EnablePackageValidation>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="icon.png" Pack="true" PackagePath="" />
+    <None Include="README.png" Pack="true" PackagePath="" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,8 +1,8 @@
 namespace YunHu.Webhook;
 
-public static class WebhookEvent
+public static class WebhookEventType
 {
-    public const string MessageNormalEvent = "message.receive.normal";
+    public const string MessageEvent = "message.receive.normal";
     public const string MessageInstructionEvent = "message.receive.instruction";
     public const string GroupJoinEvent = "group.join";
     public const string GroupLeaveEvent = "group.leave";

@@ -5,7 +5,6 @@ using YunHu.Messages;
 using YunHu.Webhook;
 
 using static YunHu.Messages.YunHuChatType;
-using static YunHu.Webhook.WebhookEvent;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,9 +16,9 @@ var app = builder.Build();
 
 app.UseHttpsRedirection();
 
-app.MapPost("/", async Task ([FromBody] YunHuWebhookMessage message) =>
+app.MapPost("/", async Task ([FromBody] YunHuWebhookMessage<MessageEvent> message) =>
 {
-    if (message.Header.EventType != MessageNormalEvent) return;
+    if (message.Header.EventType != WebhookEventType.MessageEvent) return;
 
     _ = await bot.SendMessageAsync(new(message.Event.Sender.SenderId, User, new YunHuMarkdownMessageContent { Text = $"""
     ```json
